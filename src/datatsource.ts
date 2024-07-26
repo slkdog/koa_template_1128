@@ -1,6 +1,10 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
 import config from "../config.json"
+import { Device } from "./entity/device"
+import { CodeToDevice, TPM, TPMCode } from "./entity/tpm"
+import { ErrorToTPMCode, OPL } from "./entity/opl"
+import { User, UserPassword } from "./entity/user"
 
 const AppDataSource = new DataSource({
   type: "mssql",
@@ -9,8 +13,16 @@ const AppDataSource = new DataSource({
   password: config.DBConfig.password,
   database: config.DBConfig.database,
   synchronize: false,
-  logging: process.env.NODE_ENV==="development"?false:false,
+  logging: process.env.NODE_ENV === "development" ? true : false,
   entities: [
+    Device,
+    CodeToDevice,
+    TPM,
+    TPMCode,
+    OPL,
+    ErrorToTPMCode,
+    User,
+    UserPassword
     // Add your entities here
   ],
   migrations: [],
