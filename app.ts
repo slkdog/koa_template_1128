@@ -1,12 +1,12 @@
 import Koa from "koa"
-import AppDataSource from "./src/datatsource"
+// import AppDataSource from "./src/datatsource"
 import router from "./src/router"
 import { initFolder } from "./src/util/file"
 import logger from "./src/util/logger"
 
-AppDataSource.initialize().catch((err) => {
-  logger.error(err)
-})
+// AppDataSource.initialize().catch((err) => {
+//   logger.error(err)
+// })
 
 initFolder()
 

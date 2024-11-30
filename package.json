@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "tsc -w --outDir dist",
-    "build": "del /s /q dist&& tsc --outDir dist",
+    "build": "rm -rf /s /q dist&& tsc --outDir dist",
     "start": "set NODE_ENV=development&& npm run build && node dist/app.js",
     "test": "npm run build && mocha ./dist/test/test.js",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
@@ -24,7 +24,7 @@
     "log4js": "^6.6.1",
     "mime-types": "^2.1.35",
     "minio": "^7.0.32",
-    "mssql": "^7.3.5",
+    "mssql": "^9.1.1",
     "node-xlsx": "^0.21.0",
     "qs": "^6.11.0",
     "redis": "^4.3.1",
@@ -38,7 +38,7 @@
     "@types/koa-router": "^7.4.4",
     "@types/mime-types": "^2.1.1",
     "@types/minio": "^7.0.13",
-    "@types/mssql": "^8.1.1",
+    "@types/mssql": "^9.1.1",
     "@types/node": "^17.0.23",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.0.0",
